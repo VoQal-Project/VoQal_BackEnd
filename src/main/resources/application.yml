@@ -1,13 +1,12 @@
 spring:
-  datasource:
-    url: jdbc:postgresql://localhost:5432/voqal
-    driver-class-name: org.postgresql.Driver
-  jpa:
-    properties:
-      hibernate:
-        format_sql: true
-        dialect: org.hibernate.dialect.PostgreSQLDialect
-    hibernate:
-      ddl-auto: update
-    show-sql: true
-    defer-datasource-initialization: false
+  config:
+    import:
+      - classpath:application-secret.yml
+      - classpath:application-database.yml
+springdoc:
+  swagger-ui:
+    path: /swagger
+
+
+
+
